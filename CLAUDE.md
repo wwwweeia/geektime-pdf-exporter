@@ -10,13 +10,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 # 单篇导出
-node bin/geektime-pdf.mjs https://time.geekbang.org/column/article/320980
+node bin/geektime-pdf-exporter.mjs https://time.geekbang.org/column/article/320980
 
 # 批量导出整个课程
-node bin/geektime-pdf.mjs --course https://time.geekbang.org/column/intro/100066601 -o "./download/成为 AI 产品经理"
+node bin/geektime-pdf-exporter.mjs --course https://time.geekbang.org/column/intro/100066601 -o "./download/成为 AI 产品经理"
 
 # 查看帮助
-node bin/geektime-pdf.mjs --help
+node bin/geektime-pdf-exporter.mjs --help
 ```
 
 首次运行弹出浏览器窗口登录，登录态保存在 `.auth/storage-state.json`，后续无头复用。已存在的 PDF 通过文件名前缀匹配预扫描跳过（支持断点续导，不打开浏览器）。3 篇并发导出，空白 PDF 自动重试。
@@ -26,7 +26,7 @@ node bin/geektime-pdf.mjs --help
 模块化结构，基于 `playwright-core` + 本地 Chrome。
 
 ```
-bin/geektime-pdf.mjs   CLI 入口（shebang）
+bin/geektime-pdf-exporter.mjs   CLI 入口（shebang）
 src/
   cli.mjs              参数解析、流程编排
   browser.mjs          Chrome 路径检测、浏览器启动/关闭

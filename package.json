@@ -1,10 +1,10 @@
 {
-  "name": "geektime-pdf",
+  "name": "geektime-pdf-exporter",
   "version": "1.0.0",
   "description": "Export GeekTime (极客时间) course articles to clean PDFs with bookmarks",
   "type": "module",
   "bin": {
-    "geektime-pdf": "./bin/geektime-pdf.mjs"
+    "geektime-pdf-exporter": "./bin/geektime-pdf-exporter.mjs"
   },
   "main": "src/cli.mjs",
   "files": [
@@ -12,25 +12,33 @@
     "src/"
   ],
   "scripts": {
-    "start": "node bin/geektime-pdf.mjs",
-    "export": "node bin/geektime-pdf.mjs"
+    "start": "node bin/geektime-pdf-exporter.mjs",
+    "export": "node bin/geektime-pdf-exporter.mjs"
   },
   "keywords": [
     "geektime",
     "极客时间",
     "pdf",
+    "pdf-export",
     "export",
+    "download",
+    "backup",
+    "offline",
+    "course",
+    "article",
     "scraper",
-    "playwright"
+    "playwright",
+    "browser-automation",
+    "cli"
   ],
   "author": "wwwweeia",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wwwweeia/geektime-pdf.git"
+    "url": "https://github.com/wwwweeia/geektime-pdf-exporter.git"
   },
   "bugs": {
-    "url": "https://github.com/wwwweeia/geektime-pdf/issues"
+    "url": "https://github.com/wwwweeia/geektime-pdf-exporter/issues"
   },
   "engines": {
     "node": ">=18.0.0"

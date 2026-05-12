@@ -12,13 +12,13 @@ const require = createRequire(import.meta.url);
 const pkg = require('../package.json');
 
 function printUsage() {
-  console.log(`geektime-pdf v${pkg.version} - 极客时间课程 PDF 导出工具
+  console.log(`geektime-pdf-exporter v${pkg.version} - 极客时间课程 PDF 导出工具
 
 用法:
-  单篇导出:  geektime-pdf <文章URL> [-o <输出目录>]
-  批量导出:  geektime-pdf --course <课程URL> --output <输出目录>
-  独立合并:  geektime-pdf --merge-only <目录>
-  查看版本:  geektime-pdf --version
+  单篇导出:  geektime-pdf-exporter <文章URL> [-o <输出目录>]
+  批量导出:  geektime-pdf-exporter --course <课程URL> --output <输出目录>
+  独立合并:  geektime-pdf-exporter --merge-only <目录>
+  查看版本:  geektime-pdf-exporter --version
 
 选项:
   --course <url>       课程目录页 URL（如 https://time.geekbang.org/column/intro/100066601）
@@ -36,9 +36,9 @@ function printUsage() {
   CHROME_PATH         Chrome/Chromium 可执行文件路径（自动检测）
 
 示例:
-  geektime-pdf https://time.geekbang.org/column/article/320980
-  geektime-pdf --course https://time.geekbang.org/column/intro/100066601 -o ./download/课程名
-  geektime-pdf --merge-only ./download/课程名
+  geektime-pdf-exporter https://time.geekbang.org/column/article/320980
+  geektime-pdf-exporter --course https://time.geekbang.org/column/intro/100066601 -o ./download/课程名
+  geektime-pdf-exporter --merge-only ./download/课程名
 `);
 }
 
@@ -176,7 +176,7 @@ export async function run() {
       printUsage();
       break;
     case 'version':
-      console.log(`geektime-pdf v${pkg.version}`);
+      console.log(`geektime-pdf-exporter v${pkg.version}`);
       break;
     case 'merge-only':
       await mergeOnly(config.dir);
